@@ -42,7 +42,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "starter",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        "product-mf": "productMf@http://localhost:8081/productEntry.js",
+      },
       exposes: {},
       shared: {
         ...deps,
